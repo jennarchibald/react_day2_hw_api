@@ -1,21 +1,22 @@
-import React,{Fragment} from 'react';
+import React from 'react';
 import SongDetail from './SongDetail';
 import SongImage from './SongImage';
+import './SongList.css';
 
 const SongsList = (props) => {
   const songs = props.songs.map((song, index) => {
     return (
-      <Fragment key = {song.id.attributes["im:id"]}>
+      <div className = "song" key = {song.id.attributes["im:id"]}>
       <SongImage song = {song}/>
-      <SongDetail song = {song}/>
-      </Fragment>
+      <SongDetail song = {song} position = {index + 1}/>
+      </div>
     )
   });
 
   return (
-    <ul>
+    <>
     {songs}
-    </ul>
+    </>
   );
 }
 
