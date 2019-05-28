@@ -3,7 +3,7 @@ import './SongImage.css'
 
 const SongImage = (props) => {
   return (
-    <img alt = {`Album art for ${props.song["im:name"].label}`} src = {props.song["im:image"][2].label} className = "song-image"></img>
+    <img alt = {`Album art for ${props.song.name}`} src = {props.song.artworkUrl100} className = "song-image"></img>
   )
 }
 

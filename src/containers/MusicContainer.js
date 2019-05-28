@@ -12,11 +12,12 @@ class MusicContainer extends Component {
   }
 
   componentDidMount(){
-  const url = 'https://itunes.apple.com/gb/rss/topsongs/limit=20/json';
-  fetch(url)
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const url = 'https://rss.itunes.apple.com/api/v1/gb/apple-music/top-songs/all/25/explicit.json';
+  fetch(proxyUrl + url)
     .then((response) => response.json())
     .then((songsData) => {
-      const songs = songsData.feed.entry;
+      const songs = songsData.feed.results;
       this.setState({songs})
     })
     .catch((err) => console.log(err));

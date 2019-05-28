@@ -6,7 +6,7 @@ import './SongList.css';
 const SongsList = (props) => {
   const songs = props.songs.map((song, index) => {
     return (
-      <div className = "song" key = {song.id.attributes["im:id"]}>
+      <div className = "song" key = {song.id}>
       <SongImage song = {song}/>
       <SongDetail song = {song} position = {index + 1}/>
       </div>

@@ -5,10 +5,10 @@ const SongDetail = (props) => {
   return (
     <div className = "song-detail">
     <h2>
-    {props.position + ": " + props.song["im:name"].label}
+    {props.position + ": " + props.song.name}
     </h2>
     <p>
-    {props.song["im:artist"].label}
+    {props.song.artistName}
     </p>
     </div>
   )
